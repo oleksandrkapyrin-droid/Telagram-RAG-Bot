@@ -26,7 +26,7 @@ def load_documents():
         for i, chunk in enumerate(result.chunks, start=1):
             all_documents.append(chunk)
             all_ids.append(f'{file_stem}_{i}')
-            all_metadatas.append({'source': file_stem, 'chunk': i})
+            all_metadatas.append({'sources': file_stem, 'chunk': i})
 
     if all_documents:
         collection.upsert(
