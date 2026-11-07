@@ -16,11 +16,11 @@ def answer_question(question):
 
     sources = [f'Файл: {meta['sources']}, Чанк: {meta['chunk']}' for meta in metadatas]
     if llm_answer == 'У документі немає відповіді на це питання.':
-        sources = ''
+        sources = []
     answer = {'answer': llm_answer, 'sources': sources}
 
     return answer
-
+''
 
 if __name__=='__main__':
     response = answer_question(input('Ваше питання: '))
