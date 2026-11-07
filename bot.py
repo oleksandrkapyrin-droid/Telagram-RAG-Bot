@@ -17,7 +17,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def handle_question(update: Update, context: ContextTypes.DEFAULT_TYPE):
     question = update.message.text
     await update.message.chat.send_action(ChatAction.TYPING)
-    result = asyncio.to_thread(answer_question, question)
+    result = await asyncio.to_thread(answer_question, question)
 
     text = result['answer']
     if result['sources']:
